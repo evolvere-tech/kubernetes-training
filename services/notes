@@ -1,0 +1,14 @@
+# Check all deployments, pods and services in your namespace are deleted
+kubectl get all
+
+# Apply ex-2 manifests
+kubectl apply -f ex-2/
+
+# Get the details for the service
+kubectl get svc
+
+# Get the external IP of a node
+kubectl get nodes -o wide
+
+# Test access to nginx
+curl http://176.34.65.132:32386

@@ -1,0 +1,7 @@
+# Run a redis container in detach mode.
+
+# Stop your redis container.
+
+# Run a redis container with the alpine tag
+
+# List the images stored locally.

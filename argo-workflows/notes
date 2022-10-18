@@ -1,0 +1,19 @@
+# Argo UI https://176.34.65.132:31270
+# References:
+#   https://argoproj.github.io/argo-workflows/quick-start/
+# Tips:
+#   export ARGO_NAMESPACE=argo
+#   argo list
+
+# ex-1
+argo submit argo-hello-world.yaml
+
+# ex-2
+argo submit argo-hello-world.yaml -p message='yay'
+
+# ex-3
+argo template create random.yaml 
+argo submit --from workflowtemplate/random-number-generator
+
+# ex-4
+argo submit multi-steps.yaml -p username='Steve' -p salutation='Hello'

@@ -1,0 +1,8 @@
+# Create ingress
+kubectl apply -f ingress.yaml
+
+# Check status
+kubectl describe ingress
+
+# Use AWS ELB name to verify
+curl -H "Host: fruity" http://a423db826f2f84255b241284678ec8a7-992363379.eu-west-1.elb.amazonaws.com/apple

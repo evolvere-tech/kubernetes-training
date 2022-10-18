@@ -1,0 +1,33 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  labels:
+    app: storage-app
+  name: storage-pvc
+spec:
+  accessModes:
+    - "ReadWriteOnce"
+  storageClassName: gp2
+  resources:
+    requests:
+      storage: "1Gi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+spec:
+  containers:
+    - name: busybox
+      image: busybox:1.28
+      args:
+        - sleep
+        - "360"
+      volumeMounts:
+        - name: storage-volume
+          mountPath: /data
+  volumes:
+    - name: storage-volume
+      persistentVolumeClaim:
+        claimName: storage-pvc

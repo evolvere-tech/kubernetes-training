@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fruity
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: a423db826f2f84255b241284678ec8a7-992363379.eu-west-1.elb.amazonaws.com
+      http:
+        paths:
+          - path: /apple
+            pathType: Prefix
+            backend:
+              service:
+                name: apple-service
+                port:
+                  number: 5678
+          - path: /banana
+            pathType: Prefix
+            backend:
+              service:
+                name: banana-service
+                port:
+                  number: 5678

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      company: Evolvere
+      component: nginx
+  template:
+    metadata:
+      labels:
+        company: Evolvere
+        component: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

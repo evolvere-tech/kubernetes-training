@@ -1,0 +1,8 @@
+namespace: student00
+
+resources:
+  - nginx-deployment.yaml
+  - nginx-service.yaml
+
+commonLabels:
+  company: DRW

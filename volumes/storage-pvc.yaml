@@ -1,0 +1,12 @@
+apiVersion: v1
+metadata:
+  labels:
+    app: storage-app
+  name: storage-pvc
+spec:
+  accessModes:
+    - "ReadWriteOnce"
+  storageClassName: gp2
+  resources:
+    requests:
+      storage: "1Gi"

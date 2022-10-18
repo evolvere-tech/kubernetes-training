@@ -1,0 +1,9 @@
+# Run a redis container in detach mode.
+docker run -d redis
+# Stop your redis container.
+docker ps
+docker stop ecstatic_carson
+# Run a redis container with the alpine tag
+docker run -d redis:alpine
+# List the images stored locally.
+docker images

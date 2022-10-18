@@ -1,0 +1,6 @@
+flux bootstrap github \
+--owner=beertwanger \
+--repository=Flux \
+--branch=main \
+--path=eks \
+--personal

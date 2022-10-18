@@ -1,0 +1,21 @@
+# References:
+#   https://kustomize.io/
+#
+# Check without applying
+kustomize build ex-1/ 
+# Apply
+kustomize build ex-1/ | kubectl apply -f -
+# Delete
+kustomize build ex-1/ | kubectl delete -f -
+# Alternative using kubectl
+kubectl apply -k ex-1/
+
+# Common Transformers
+#
+# commonLabel - adds a label to all kubernetes resources
+# namePrefix/Suffix - adds a common prefix-suffix to all resource names
+# Namespace - adds a common namespace to all resources
+# commonAnnotations - adds an annotation to all resources
+# images - changes image name and/or image tag
+#
+
